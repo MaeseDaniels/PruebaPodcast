@@ -1,0 +1,26 @@
+.episode-list {
+  border-collapse: collapse;
+  border: 1px solid gray;
+}
+
+.episode-list tr:nth-child(even) {
+  background-color: rgb(246, 246, 246);
+}
+
+.episode-list tr {
+  border-bottom: 1px solid gray;
+}
+
+.episode-list tr td {
+  padding: 10px;
+}
+
+.episode-list__title {
+  color: #0060fa;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.episode-list__title:hover {
+  color: #002f7a;
+}
