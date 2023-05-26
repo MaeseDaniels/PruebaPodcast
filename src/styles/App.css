@@ -1,0 +1,36 @@
+.header {
+  border-bottom: 1px solid lightslategrey;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+.input-container {
+  display: flex;
+  padding: 10px 40px;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.input-container .podcastfound {
+  color: white;
+  background-color: #0060fa;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.input-container .searcher {
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
