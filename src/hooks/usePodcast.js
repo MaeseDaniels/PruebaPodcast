@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getDaysTo } from "../utils/functions";
+import { compRefresh } from "../utils/functions";
 import {
   DAYS_TO_REFRESH_PODCASTLIST,
   LOCAL_ITEM__LIST,
@@ -15,16 +15,6 @@ const usePodcast = () => {
     isLoading: false,
     isSuccess: false,
   });
-
-  /**
-   * comprueba si hay datos en el localStorage de anteriores peticiones y
-   * si ha pasado el tiempo necesario para tener que volver a pedir los datos a la api
-   * @returns boolean
-   */
-  const compRefresh = (key, keyDate, daysToExpire) =>
-    localStorage.getItem(key) &&
-    localStorage.getItem(keyDate) &&
-    getDaysTo(new Date(parseInt(localStorage.getItem(keyDate)))) < daysToExpire;
 
   const GetPodcastList = () => {
     if (
@@ -89,7 +79,7 @@ const usePodcast = () => {
       setPodcastDetailState({ isLoading: true, isSuccess: false });
 
       fetch(
-        `https://api.allorigins.win/raw?url=https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`
+        `https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`
       )
         .then((response) => {
           if (response.ok) return response.json();
